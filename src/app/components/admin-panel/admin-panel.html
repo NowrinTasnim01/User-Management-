@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-group">
+        <button class="list-group-item list-group-item-action" (click)="view = 'account'" [class.active]="view === 'account'">My Account</button>
+        <button class="list-group-item list-group-item-action" (click)="view = 'users'" [class.active]="view === 'users'">Manage Users</button>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div *ngIf="view === 'account'">
+        <h2>My Account</h2>
+        <p>Name: {{ user?.name }}</p>
+        <p>Email: {{ user?.email }}</p>
+        <p>Role: {{ user?.role }}</p>
+      </div>
+      <div *ngIf="view === 'users'">
+        <h2>Manage Users</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of users">
+              <td>{{ u.id }}</td>
+              <td>{{ u.name }}</td>
+              <td>{{ u.email }}</td>
+              <td>
+                <select [(ngModel)]="u.role" (change)="updateRole(u.id, u.role)">
+                  <option value="user">User</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteUser(u.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <p *ngIf="message" class="text-success">{{ message }}</p>
+  <p *ngIf="error" class="text-danger">{{ error }}</p>
+</div>

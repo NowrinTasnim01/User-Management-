@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <h2>User Dashboard</h2>
+  <p>Name: {{ user?.name }}</p>
+  <p>Email: {{ user?.email }}</p>
+  <p>Role: {{ user?.role }}</p>
+  <form (ngSubmit)="updateUserData()">
+    <div class="mb-3">
+      <label class="form-label">Update Name</label>
+      <input type="text" class="form-control" [(ngModel)]="newName" name="newName" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  <p *ngIf="message" class="text-success">{{ message }}</p>
+  <p *ngIf="error" class="text-danger">{{ error }}</p>
+</div>

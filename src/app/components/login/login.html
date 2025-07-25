@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2>{{ isSignup ? 'Sign Up' : 'Login' }}</h2>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="mb-3" *ngIf="isSignup">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="name" name="name" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ isSignup ? 'Sign Up' : 'Login' }}</button>
+    <button type="button" class="btn btn-link" (click)="toggleSignup()">
+      {{ isSignup ? 'Switch to Login' : 'Switch to Sign Up' }}
+    </button>
+  </form>
+  <p *ngIf="error" class="text-danger">{{ error }}</p>
+</div> 
