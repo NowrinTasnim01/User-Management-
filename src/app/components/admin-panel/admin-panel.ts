@@ -3,10 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../../service/auth.sevice';
-
+import { Dashboard } from '../dashboard/dashboard';
 @Component({
   selector: 'app-admin-panel',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, Dashboard],
   templateUrl: './admin-panel.html',
   styleUrl: './admin-panel.css'
 })

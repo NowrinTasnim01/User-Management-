@@ -1,12 +1,22 @@
 <div class="container mt-5">
-  <h2>User Dashboard</h2>
+  <h2>My Account</h2>
   <p>Name: {{ user?.name }}</p>
   <p>Email: {{ user?.email }}</p>
+  <p>Phone Number: {{ user?.phone }}</p>
+  <p>Address: {{ user?.address }}</p>
   <p>Role: {{ user?.role }}</p>
   <form (ngSubmit)="updateUserData()">
     <div class="mb-3">
       <label class="form-label">Update Name</label>
       <input type="text" class="form-control" [(ngModel)]="newName" name="newName" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Update Address</label>
+      <input type="text" class="form-control" [(ngModel)]="newaddress" name="newaddress" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Update Phone Number</label>
+      <input type="text" class="form-control" [(ngModel)]="newphone" name="newphone" required>
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
   </form>

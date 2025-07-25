@@ -8,10 +8,7 @@
     </div>
     <div class="col-md-9">
       <div *ngIf="view === 'account'">
-        <h2>My Account</h2>
-        <p>Name: {{ user?.name }}</p>
-        <p>Email: {{ user?.email }}</p>
-        <p>Role: {{ user?.role }}</p>
+        <app-dashboard></app-dashboard>
       </div>
       <div *ngIf="view === 'users'">
         <h2>Manage Users</h2>
