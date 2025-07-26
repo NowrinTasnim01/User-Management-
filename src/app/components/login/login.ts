@@ -4,7 +4,7 @@ import { AuthService } from '../../service/auth.sevice';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {NgForm} from '@angular/forms';
 import { FormsModule } from '@angular/forms'; 
-import { CommonModule } from '@angular/common';     // ✅ Add this
+import { CommonModule } from '@angular/common';  
 
 
 @Component({
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';     // ✅ Add this
   styleUrl: './login.css'
 })
 export class Login {
-  isSignup = true;
+  isSignup = false;
   name = '';
   email = '';
   password = '';

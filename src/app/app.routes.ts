@@ -3,7 +3,8 @@ import { Home } from './components/home/home';
 import { Login } from './components/login/login';
 import { Dashboard } from './components/dashboard/dashboard';
 import { AdminPanel } from './components/admin-panel/admin-panel';
-
+import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 export const routes: Routes = [
   {
     path: '',
@@ -15,10 +16,12 @@ export const routes: Routes = [
   },
    {
     path: 'dashboard',
-    component: Dashboard
+    component: Dashboard,
+    canActivate: [AuthGuard]
   },
    {
     path: 'admin',
-    component: AdminPanel
+    component: AdminPanel,
+    canActivate: [AuthGuard, AdminGuard]
   }
 ];
