@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   private apiUrl = 'http://localhost:3000/api';
   private tokenKey = 'auth_token';

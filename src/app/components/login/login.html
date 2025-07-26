@@ -1,5 +1,5 @@
-<div class="container mt-5">
-  <h2>{{ isSignup ? 'Sign Up' : 'Login' }}</h2>
+<div class="container mt-5" style="width: 500px;">
+  <h2 class="text-center">{{ isSignup ? 'Sign Up' : 'Login' }}</h2>
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="mb-3" *ngIf="isSignup">
       <label class="form-label">Name</label>

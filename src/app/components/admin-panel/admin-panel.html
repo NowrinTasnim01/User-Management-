@@ -2,12 +2,24 @@
   <div class="row">
     <div class="col-md-3">
       <div class="list-group">
-        <button class="list-group-item list-group-item-action" (click)="view = 'account'" [class.active]="view === 'account'">My Account</button>
-        <button class="list-group-item list-group-item-action" (click)="view = 'users'" [class.active]="view === 'users'">Manage Users</button>
+        <button
+          class="list-group-item list-group-item-action"
+          (click)="view = 'account'"
+          [class.active]="view === 'account'"
+        >
+          My Account
+        </button>
+        <button
+          class="list-group-item list-group-item-action"
+          (click)="view = 'users'"
+          [class.active]="view === 'users'"
+        >
+          Manage Users
+        </button>
       </div>
     </div>
     <div class="col-md-9">
-      <div *ngIf="view === 'account'">
+      <div *ngIf="view === 'account'" style="margin-top: -50px">
         <app-dashboard></app-dashboard>
       </div>
       <div *ngIf="view === 'users'">
@@ -28,20 +40,28 @@
               <td>{{ u.name }}</td>
               <td>{{ u.email }}</td>
               <td>
-                <select [(ngModel)]="u.role" (change)="updateRole(u.id, u.role)">
+                <select
+                  [(ngModel)]="u.role"
+                  (change)="updateRole(u.id, u.role)"
+                >
                   <option value="user">User</option>
                   <option value="admin">Admin</option>
                 </select>
               </td>
               <td>
-                <button class="btn btn-danger btn-sm" (click)="deleteUser(u.id)">Delete</button>
+                <button
+                  class="btn btn-danger btn-sm"
+                  (click)="deleteUser(u.id)"
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
+        <p *ngIf="message" class="text-success text-center">{{ message }}</p>
+        <p *ngIf="error" class="text-danger text-center">{{ error }}</p>
       </div>
     </div>
   </div>
-  <p *ngIf="message" class="text-success">{{ message }}</p>
-  <p *ngIf="error" class="text-danger">{{ error }}</p>
 </div>

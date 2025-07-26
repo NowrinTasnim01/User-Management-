@@ -1,0 +1,4 @@
+.home-wrapper {
+  background: linear-gradient(135deg, #dab7d3, #9762ed);
+  min-height: calc(100% - 70px);
+}
